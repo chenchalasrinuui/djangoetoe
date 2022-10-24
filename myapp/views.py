@@ -37,11 +37,12 @@ def updateStudent(request):
 @api_view(["GET"])
 def getStudents(request):
     try:
-        students =  Students.objects.all()
+        students =  Students.objects.all().values()
         serializer = StudentsSerializer(students, many=True)
         return Response(serializer.data)
     except BaseException as e:
         print(e)
+        return Response(e)
 
 @api_view(["DELETE"])
 def delStudent(request):
