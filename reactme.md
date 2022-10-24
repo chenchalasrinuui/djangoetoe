@@ -1,6 +1,6 @@
 1. create django project
 
-2. pipenv install django gunicorn whitenoise djangorestframework
+2. pipenv install django gunicorn whitenoise djangorestframework corsheaders
 
 3. pip freeze > requirements.txt
 
@@ -19,6 +19,8 @@
   c. INSTALLED_APPS = [
     	'whitenoise.runserver_nostatic',
     	'django.contrib.staticfiles',
+      'rest_framework',
+      'corsheaders'
    	# ...
 	] 
   d. MIDDLEWARE = [
