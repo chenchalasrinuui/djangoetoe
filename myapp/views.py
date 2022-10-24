@@ -4,9 +4,9 @@ import json
 from .models import Students
 from rest_framework import status
 from rest_framework.response import Response
-from myapp.serializers import StudentsSerializer
-
-
+#from myapp.serializers import StudentsSerializer
+from .serializers import StudentsSerializer
+from django.core import serializers
 # Create your views here.
 
 @api_view(["POST"])
@@ -38,7 +38,8 @@ def updateStudent(request):
 def getStudents(request):
     try:
         students =  Students.objects.all().values()
-        serializer = StudentsSerializer(students, many=True)
+        data = serializers.serialize("json", students)
+        serializer = StudentsSerializer(data, many=True)
         return Response(serializer.data)
     except BaseException as e:
         print(e)
