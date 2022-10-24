@@ -1,6 +1,6 @@
 1. create django project
 
-2. pipenv install django gunicorn whitenoise
+2. pipenv install django gunicorn whitenoise djangorestframework
 
 3. pip freeze > requirements.txt
 
