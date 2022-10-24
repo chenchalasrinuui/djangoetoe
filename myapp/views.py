@@ -38,9 +38,8 @@ def updateStudent(request):
 def getStudents(request):
     try:
         students =  Students.objects.all().values()
-        data = serializers.serialize("json", students)
-        serializer = StudentsSerializer(data, many=True)
-        return Response(serializer.data)
+        #serializer = StudentsSerializer(students, many=True)
+        return Response(students)
     except BaseException as e:
         print(e)
         return Response(e)
