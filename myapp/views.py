@@ -35,9 +35,9 @@ def updateStudent(request):
     print(e)
 
 @api_view(["GET"])
-async def getStudents(request):
+def getStudents(request):
     try:
-        students = await Students.objects.all()
+        students =  Students.objects.all()
         serializer = StudentsSerializer(students, many=True)
         return Response(serializer.data)
     except BaseException as e:
