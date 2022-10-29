@@ -87,17 +87,17 @@ WSGI_APPLICATION = 'deployment.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#       'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'school',
-#         'ENFORCE_SCHEMA': False,
-#         'CLIENT': {
-#                 'host': 'mongodb+srv://stepup:stepup@cluster0.y2gqfip.mongodb.net/school?retryWrites=true&w=majority',
-#                 'authMechanism': 'SCRAM-SHA-1'
-#         }  
-#     }
-# }
+DATABASES = {
+      'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'school',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+                'host': 'mongodb+srv://stepup:stepup@cluster0.y2gqfip.mongodb.net/school?retryWrites=true&w=majority',
+                'authMechanism': 'SCRAM-SHA-1'
+        }  
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
