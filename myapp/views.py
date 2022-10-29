@@ -1,4 +1,4 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from rest_framework.decorators import api_view
 import json
 from .models import Students
@@ -15,7 +15,7 @@ def regStudent(request):
         stdSerializer=StudentsSerializer(data=data)
         if stdSerializer.is_valid():
             stdSerializer.save()
-            return Response("Success", status=status.HTTP_201_CREATED)
+            return Response({"status":200,"msg":"success"}, status=status.HTTP_201_CREATED)
         return Response("Not Inserted", status=status.HTTP_400_BAD_REQUEST)
     except BaseException as e:
         print(e)
