@@ -1,6 +1,6 @@
 1. create django project
 
-2. pipenv install django gunicorn whitenoise djangorestframework corsheaders
+2. pipenv install django gunicorn whitenoise djangorestframework django-cors-headers
 
 3. pip freeze > requirements.txt
 
