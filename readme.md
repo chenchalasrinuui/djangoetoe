@@ -1,6 +1,6 @@
 1. create django project
 
-2. pipenv install django gunicorn whitenoise djangorestframework django-cors-headers djongo
+2. pipenv install django gunicorn whitenoise djangorestframework django-cors-headers djongo pymongo = "3.12.3"
 
 3. pip freeze > requirements.txt
 
@@ -39,8 +39,15 @@
 
 Note:
 
+
 To set Heroku version 
 
     heroku stack:set heroku-20 -a <heroku appname>
 
     heroku config:set DISABLE_COLLECTSTATIC=1 -a  <heroku appname>
+
+    heroku ps -a <heroku appname>
+
+    heroku logs -a <heroku appname>
+
+    heroku ps:scale worker=1 -a stepupdjango
