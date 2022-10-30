@@ -10,8 +10,7 @@ whitenoise = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 djongo = "*"
-pymongo = "3.12.1"
-dnspython = "*"
+
 
 [dev-packages]
 
