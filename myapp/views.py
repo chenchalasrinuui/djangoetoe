@@ -18,7 +18,8 @@ def regStudent(request):
             return Response({"status":200,"msg":"success"}, status=status.HTTP_201_CREATED)
         return Response("Not Inserted", status=status.HTTP_400_BAD_REQUEST)
     except BaseException as e:
-        print(e)
+        print("POST",e)
+        return Response(e)
 
 @api_view(["PUT"])
 def updateStudent(request):
@@ -31,8 +32,9 @@ def updateStudent(request):
           return Response("Success", status=status.HTTP_201_CREATED)
      return Response("Not Updated", status=status.HTTP_400_BAD_REQUEST)
   except BaseException as e:
-    print(e)
-
+    print("PUT",e)
+    return Response(e)
+    
 @api_view(["GET"])
 def getStudents(request):
     try:
